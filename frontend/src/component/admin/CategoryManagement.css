@@ -1,0 +1,50 @@
+.ap-b-div{
+    background: rgb(59, 59, 59);
+    /* position: relative; */
+    height: 100%;
+    margin-left: 20px;
+    padding-left: 20px;
+    color: cornsilk;
+    width:1000px;
+    align-content: center;
+}
+.cm-inner-div{
+
+    /* position: absolute; */
+    width: fit-content;
+    /* border: 3px solid green; */
+    margin: auto;
+   
+    
+
+}
+.cm-inner-div form{
+    width: 400px;
+    height: 80px;
+    
+}
+.cm-input{
+    
+    font-size: 1.4rem;
+    text-align: center;
+    color:#222;
+   
+    
+}
+.btn-custom{
+    height: 60px;
+    margin: 0 0 0 0 ;
+}
+.table-div{
+    margin:5px 25px 50px 5px;
+}
+.cu-tig{
+     
+}
+.cm-icon-delete{
+    cursor: pointer;
+    font-size: 1.3rem;
+}
+.cm-icon-delete:hover{
+    color: rgb(220, 20, 20);
+}

@@ -1,0 +1,79 @@
+.ap-b-div{
+    background: rgb(78, 76, 76);
+    position: relative;
+    height: 100%;
+    margin-left: 20px;
+    padding-left: 20px;
+    color: cornsilk;
+    width:1000px;
+}
+.privewe-img{
+    max-height: 200px;
+    align-items: center;
+    margin-left: 5rem;
+    margin-right: auto;
+}
+.ap-from{
+    padding:5px 20px 5px 5px;
+    color: cornsilk;
+    position:sticky;
+}
+.ap-form-ul{
+    display: grid;
+    grid-template-columns:50% 50%;
+    list-style: none;
+    width: 100%; 
+    padding-left: 0px;
+}
+.ap-form-li{
+    padding-top: 10px;
+    max-width: 350px;
+
+}
+.ap-control input{
+    width:100%;
+    display: block;
+    padding:10px;
+    color:#222;
+    border:none;
+    outline:none;
+    margin:0em 0em 1em 0em;
+}
+.ap-control textarea{
+    width:100%;
+    display: block;
+    padding:10px;
+    color:#222;
+    border:none;
+    outline:none;
+    margin:0em 0em 1em 0em;
+}
+.ap-control select{
+    width:100%;
+    display: block;
+    padding:10px;
+    color:#222;
+    border:none;
+    outline:none;
+    margin:0em 0em 0em 0em;
+}
+.s-btn{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 30px 10px 30px;
+    width:fit-content;
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 30px;
+}
+
+@media (max-width: 600px) {
+    .ap-form-ul{
+        display: grid;
+        grid-template-columns:1;
+        list-style: none;
+        width: fit-content; 
+        padding-left: 0px;
+    }
+}

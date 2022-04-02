@@ -1,0 +1,10 @@
+.sing-contanner{
+    width:70%;
+    height: fit-content;
+    margin: auto;
+    padding: 5px 50px 5px 50px;
+    background: rgba(37, 37, 37, 0.267);
+}
+.submit-btn{
+    margin: auto;
+}

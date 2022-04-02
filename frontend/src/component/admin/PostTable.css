@@ -1,0 +1,48 @@
+.table-img{
+    width:70px;
+    cursor: pointer;
+}
+.cu-table td{
+   
+
+}
+.td-title{
+    width: 100px;
+    overflow-x: hidden;
+}
+.cu-table p{
+    width: fit-content;  
+}
+.table-icon-div{
+    
+}
+.table-icon-div i{
+    font-size: 1.3rem;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.table-icon-div i[type='update']:hover{
+    color: rgb(255, 222, 73);
+}
+.table-icon-div i[type='delete']:hover{
+    color: rgb(220, 20, 20);
+    
+}
+.yesno-img{
+    width: 70px;
+}
+.yesno-ul{
+    display: grid;
+    grid-template-columns:auto auto;
+    list-style: none;
+    width: fit-content;
+}
+.yesno-ul2{
+    
+}
+.yesno-ul li{
+    margin-right: 10px;
+}
+.yesno-ul button{
+    width: 50px;
+}
