@@ -90,7 +90,7 @@ function Navbar(props) {
             <nav className='navbar1'>
                 <div className='navbar-container'>
                     <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-                        HansalakaFineArt <i class="fas fa-paint-brush"></i> 
+                        <img src='./images/first.png'className='sltb-logo'/>
                     </Link>
                     <div className='menu-icon' onClick={handleClick}>
                         <i className={click ? 'fas fa-times' : 'fas fa-bars'}/>
@@ -104,7 +104,7 @@ function Navbar(props) {
                         
                         <li>
                             <Link to='/drawing' className='nav-links' onClick={closeMobileMenu}>
-                                Drawing
+                                Services
                             </Link>
                         </li>
                         <li>
@@ -112,6 +112,12 @@ function Navbar(props) {
                                 About
                             </Link>
                         </li>
+                        <li>
+                            <Link to='/contact' className='nav-links' onClick={closeMobileMenu}>
+                                contact
+                            </Link>
+                        </li>
+                        
                         <li>
                             <Link to='/userlogin' className='nav-links-mobile' onClick={closeMobileMenu}>
                                 Sign Up
