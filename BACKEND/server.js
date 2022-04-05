@@ -4,11 +4,9 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 const cors = require('cors');
 
-const product = require('./routers/product_router');
-const user = require("./routers/user_router");
-const like = require('./routers/like_router');
+
 const admin = require('./routers/admin_router');
-const category = require('./routers/category_router');
+
 
 const app = express();
 const port = process.env.port || 8989;
@@ -28,12 +26,7 @@ app.use(cors());
 
 //------------------------------------------------
 
-app.use('/product',product);
-app.use('/api/uploads', express.static('uploads'));//To get uploaded images
-app.use('/api/user',user);
-app.use('/api/like',like);
 app.use('/api/admin',admin);
-app.use('/api/category',category);
 
 //------------------------------------------------
 
