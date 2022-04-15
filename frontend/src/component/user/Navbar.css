@@ -58,6 +58,7 @@
     text-align: center;
     width: 100%;
     justify-content: end;
+    margin: auto auto;
     margin-right: 2rem;
   }
   
@@ -75,9 +76,9 @@
   }
   
   .nav-links:hover {
-    border-bottom: 4px solid #fff;
+    border-bottom: 4px solid #1045f3;
     transition: all 0.5s ease-out;
-    color: #ffffff;
+    color: #1045f3;
   }
   
   .fa-bars {
@@ -107,6 +108,7 @@
       left: -100%;
       opacity: 1;
       transition: all 0.5s ease;
+      
     }
   
     .nav-menu.active {
@@ -122,6 +124,7 @@
       padding: 2rem;
       width: 100%;
       display: table;
+      margin-top: 10px;
     }
   
     .nav-links:hover {
