@@ -6,6 +6,7 @@ const cors = require('cors');
 
 
 const admin = require('./routers/admin_router');
+
 const booking = require('./routers/booking_routers/booking_router');
 
 
@@ -28,6 +29,7 @@ app.use(cors());
 //------------------------------------------------
 
 app.use('/api/admin',admin);
+
 app.use('/api/booking',booking);
 
 //------------------------------------------------
