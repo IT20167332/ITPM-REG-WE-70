@@ -5,7 +5,10 @@ require('dotenv').config();
 const cors = require('cors');
 
 
+
 const admin = require('./routers/admin_router');
+const bus = require('./routers/busRouter/busRouter');
+
 
 
 const app = express();
@@ -27,6 +30,7 @@ app.use(cors());
 //------------------------------------------------
 
 app.use('/api/admin',admin);
+app.use('/api/busManagement',bus);
 
 //------------------------------------------------
 
