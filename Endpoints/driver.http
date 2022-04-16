@@ -1,0 +1,18 @@
+### ------driver registration
+POST  http://localhost:8989/api/driver/add_driver HTTP/1.1
+content-type: application/json
+
+{
+    "conductorName": "jtyjuimike1",
+    "conductorNIC": "444kiykiy44g444",
+    "conductorId":"1g23kkyky4", 
+    "contactNumber":"01111789545651111"
+  
+
+}
+
+### ------driver registration
+GET   http://localhost:8989/api/driver/get_driver HTTP/1.1
+content-type: application/json
+
+
