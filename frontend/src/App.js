@@ -10,6 +10,7 @@ import Footer from './component/user/Footer';
 import UserLogin from './component/user/pages/UserLogin';
 import SingInForm from './component/user/SingInForm';
 import AddBus from './component/busManagement/AddBus';
+import SearchBus from './component/BookingManagement/SearchBus';
 
 function App() {
 
@@ -18,11 +19,12 @@ function App() {
       
       <Navbar/> 
           <Route exact path='/' component={Home}/> 
-          
+          <Route exact path='/services' component={SearchBus}/>
           <Route exact path= '/contact' render={()=><AddBus/>}/>
           <Route exact path='/usersingin' render={()=> <SingInForm/>}/>
           <Route exact path='/userlogin' component={UserLogin}/>
       <Footer/>
+      
     </div>
     
   );
