@@ -11,6 +11,10 @@ import UserLogin from './component/user/pages/UserLogin';
 import SingInForm from './component/user/SingInForm';
 import AddBus from './component/busManagement/AddBus';
 
+import { LoginScreen } from './component/PassengerManagement/login';
+import { RegisterScreen } from './component/PassengerManagement/register';
+import { ProfileScreen } from './component/PassengerManagement/profile';
+
 function App() {
 
   return (
@@ -21,7 +25,10 @@ function App() {
           
           <Route exact path= '/contact' render={()=><AddBus/>}/>
           <Route exact path='/usersingin' render={()=> <SingInForm/>}/>
-          <Route exact path='/userlogin' component={UserLogin}/>
+          <Route exact path='/userlogin' component={LoginScreen}/>
+          <Route exact path='/RegisterScreen' component={RegisterScreen}/>
+          <Route exact path='/ProfileScreen' component={ProfileScreen}/>
+          
       <Footer/>
     </div>
     
