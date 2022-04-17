@@ -3,16 +3,31 @@ POST  http://localhost:8989/api/driver/add_driver HTTP/1.1
 content-type: application/json
 
 {
-    "conductorName": "jtyjuimike1",
-    "conductorNIC": "444kiykiy44g444",
-    "conductorId":"1g23kkyky4", 
-    "contactNumber":"01111789545651111"
+    "driverName": "jtyjnnuig6mike1",
+    "driverNIC": "444gkiykiyy44g444",
+    "driverId":"1g2hh3kykyggky4", 
+    "contactNumber":"01115517899545651111"
   
 
 }
 
-### ------driver registration
+### ------display driver 
 GET   http://localhost:8989/api/driver/get_driver HTTP/1.1
 content-type: application/json
 
 
+### Update driver
+Put  http://localhost:8989/api/driver/update_driver/6259ebb943399e450451f3b3 HTTP/1.1
+content-type : application/json
+
+{
+    "driverName": "jty",
+    "driverNIC": "444gk",
+    "driverId":"1g2hh3", 
+    "driverNumber":"0111"
+ 
+}
+
+### ------delete driver 
+DELETE    http://localhost:8989/api/driver/delete_driver/6259fd950960a2f520c0631e HTTP/1.1
+content-type: application/json

@@ -1,5 +1,6 @@
 const  conductorData = require('../../models/Employeeemanagement_model/conductor_model');
 
+//Add Conductorer 
 const  conductorRegistration = (req, res) => {
   const {  conductorName, conductorNIC,  conductorId, contactNumber } = req.body;
   if (! conductorName || ! conductorNIC || ! conductorId || !contactNumber) {
@@ -22,6 +23,7 @@ const  conductorRegistration = (req, res) => {
     })
 }
 
+//Get all Conductorers
 conductorDisplay = async (req, res) => {
   conductorData.find( function (err, user) {
     if (err) return res.status(500).send("Error on the server.");
@@ -33,9 +35,51 @@ conductorDisplay = async (req, res) => {
   });
 };
 
+// Upadte a Conductor 
+updateConductor = async (req, res) => {
+  conductorData.findOne({ _id: req.params.id }, function (err, user) {
+    if (err) return res.status(500).send("Error on the server.");
+    if (user) {
+      const id = user._id;
+      const  conductorName = req.body. conductorName;
+      const  conductorNIC = req.body. conductorNIC;
+      const  conductorId = req.body. conductorId;
+      const contactNumber = req.body.contactNumber;
+      
+      conductorData.updateMany(
+        { _id: id },
+        { $set: {  conductorName:  conductorName, conductorNIC: conductorNIC,  conductorId: conductorId, contactNumber: contactNumber} }
+      ).exec(function (err, msgs) {
+        if (err) {
+          return res.status(400).json({ success: false, error: err });
+        } else {
+          res.status(200).send("updated successfully");
+        }
+      });
+    } else {
+      return res.status(500).send("Not available  Conductor");
+    }
+  });
+};
+
+//Delete a Conductors
+deleteConductor = async (req, res) => {
+  console.log(req.params.id);
+  conductorData.deleteOne({ _id: req.params.id }, function (err, user) {
+    if (err) return res.status(500).send("Error on the server.");
+    if (!user) {
+      return res.status(404).send("No Conductor found.");
+    } else {
+      //res.send(user);
+      res.status(200).send("Delete successfully");
+    }
+  });
+};
 
 module.exports = {
   conductorRegistration,
-  conductorDisplay
+  conductorDisplay,
+  updateConductor,
+  deleteConductor
 
 }

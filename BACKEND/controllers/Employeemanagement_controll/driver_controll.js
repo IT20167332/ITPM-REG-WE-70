@@ -1,5 +1,6 @@
 const driverData = require('../../models/Employeeemanagement_model/driver_model');
 
+//Add Driver
 const driverRegistration = (req, res) => {
   const { driverName, driverNIC, driverId, contactNumber } = req.body;
   if (!driverName || !driverNIC || !driverId || !contactNumber) {
@@ -23,7 +24,7 @@ const driverRegistration = (req, res) => {
 }
 
 
-
+//Get all Drivers
 driverDisplay = async (req, res) => {
   driverData.find( function (err, user) {
     if (err) return res.status(500).send("Error on the server121.");
@@ -35,9 +36,49 @@ driverDisplay = async (req, res) => {
   });
 };
 
+//Update a Driver
+updateDriver = async (req, res) => {
+  driverData.findOne({ _id: req.params.id }, function (err, user) {
+    if (err) return res.status(500).send("Error on the server.");
+    if (user) {
+      const id = user._id;
+      const driverName = req.body.driverName;
+      const driverNIC = req.body.driverNIC;
+      const driverId = req.body.driverId;
+      const contactNumber = req.body.contactNumber;
+      
+      driverData.updateMany(
+        { _id: id },
+        { $set: { driverName: driverName, driverNIC: driverNIC, driverId: driverId, contactNumber: contactNumber} }
+      ).exec(function (err, msgs) {
+        if (err) {
+          return res.status(400).json({ success: false, error: err });
+        } else {
+          res.status(200).send("updated successfully");
+        }
+      });
+    } else {
+      return res.status(500).send("Not available Driver");
+    }
+  });
+};
 
+//Delete a Driver
+deleteDriver = async (req, res) => {
+  console.log(req.params.id);
+  driverData.deleteOne({ _id: req.params.id }, function (err, user) {
+    if (err) return res.status(500).send("Error on the server.");
+    if (!user) {
+      return res.status(404).send("No Driver found.");
+    } else {
+      res.status(200).send("Delete successfully");
+    }
+  });
+};
 
 module.exports = {
   driverRegistration,
-  driverDisplay
+  driverDisplay,
+  updateDriver,
+  deleteDriver
 }
