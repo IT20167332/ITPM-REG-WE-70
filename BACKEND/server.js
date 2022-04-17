@@ -10,7 +10,7 @@ const admin = require('./routers/admin_router');
 const bus = require('./routers/busRouter/busRouter');
 
 const booking = require('./routers/booking_routers/booking_router');
-
+const timetable = require('./routers/booking_routers/timeTable_router');
 
 
 
@@ -36,6 +36,7 @@ app.use('/api/admin',admin);
 app.use('/api/busManagement',bus);
 
 app.use('/api/booking',booking);
+app.use('/api/timetable',timetable);
 
 //------------------------------------------------
 

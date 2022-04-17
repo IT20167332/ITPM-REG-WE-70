@@ -1,0 +1,25 @@
+.seat{
+    width:50px;
+    height: 50px;
+    border: thick double #32a1ce;
+    border-radius: 50%;
+    padding: 9px 9px 10px 14px;
+    margin: 5px 5px 5px 20px;
+    background: rgb(255, 255, 255);
+    
+}
+.bookSeat{
+    background: rgb(255, 100, 100);
+}
+.setmargin{
+    margin-left: 20px;
+}
+.setmargin2{
+    margin-left: 40px;
+}
+.seat-map{
+    width:fit-content;
+}
+.strong{
+    margin-left: 20px;
+}

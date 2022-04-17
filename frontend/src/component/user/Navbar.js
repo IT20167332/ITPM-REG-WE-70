@@ -19,7 +19,7 @@ function Navbar(props) {
         
     }
 
-    console.log(props)
+    //console.log(props)
 
     function getCookie(cname) {
         let name = cname + "=";

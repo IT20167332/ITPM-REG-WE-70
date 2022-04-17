@@ -1,23 +1,34 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import {Link} from 'react-router-dom'
 
 function SearchBus() {
+
+    const [fromInput, setfromInput] = useState("")
+    const [toInput, settoInput] = useState("")
+
+    function onSubmit(e){
+        e.preventDefault();
+        window.location.replace(`/services/${fromInput}/${toInput}`);
+    }  
+
+
   return (
-      <form>
+      <form onSubmit={onSubmit}>
           <div className='container-sm border border-primary my-5 bg-light text-dark p-3'>
                 <div className='row fs-5'>
                     <h1 className='my-3'>The smart way to find your bus ticket</h1>
                     <div className='col-md-4'>
                     <label for="exampleFormControlInput1" class="form-label fs-5"><strong>From</strong></label>
                         <div class="input-group mb-3">
-                            <label class="input-group-text" for="inputGroupSelect01">From</label>
-                            <select class="form-select" id="inputGroupSelect01">
+                            <label class="input-group-text" htmlfor="inputGroupSelect01">From</label>
+                            <select class="form-select" id="inputGroupSelect01" onChange={(e)=>{setfromInput(e.target.value)}}>
                                 <option selected>Choose...</option>
-                                <option value="1">Colombo-</option>
-                                <option value="2">Kegalle</option>
-                                <option value="3">Mathara</option>
-                                <option value="1">Kurunegala-</option>
-                                <option value="2">Jaffna</option>
-                                <option value="3">Ampara</option>
+                                <option value="Colombo">Colombo</option>
+                                <option value="Kegalle">Kegalle</option>
+                                <option value="Mathara">Mathara</option>
+                                <option value="Kurunegala">Kurunegala</option>
+                                <option value="Jaffna">Jaffna</option>
+                                <option value="Warakapola">Warakapola</option>
                             </select>
                         </div>
                     </div>
@@ -25,15 +36,15 @@ function SearchBus() {
                     <div className='col-md-4 '>
                     <label for="exampleFormControlInput1" class="form-label fs-5"><strong>To</strong></label>
                         <div class="input-group mb-3">
-                            <label class="input-group-text" for="inputGroupSelect02">To</label>
-                            <select class="form-select" id="inputGroupSelect02">
+                            <label class="input-group-text" htmlfor="inputGroupSelect02">To</label>
+                            <select class="form-select" id="inputGroupSelect02" onChange={(e)=>{settoInput(e.target.value)}}>
                                 <option selected>Choose...</option>
-                                <option value="1">Colombo-</option>
-                                <option value="2">Kegalle</option>
-                                <option value="3">Mathara</option>
-                                <option value="1">Kurunegala-</option>
-                                <option value="2">Jaffna</option>
-                                <option value="3">Ampara</option>
+                                <option value="Colombo">Colombo</option>
+                                <option value="Kegalle">Kegalle</option>
+                                <option value="Mathara">Mathara</option>
+                                <option value="Kurunegala">Kurunegala</option>
+                                <option value="Jaffna">Jaffna</option>
+                                <option value="Warakapola">Warakapola</option>
                             </select>
                         </div>
                     </div>
@@ -46,11 +57,12 @@ function SearchBus() {
                     </div>
                 </div>
                 <div className='row align-items-center my-3'>
-                    
-                        <div className='col-md-5'></div>
-                        <div className='col-md-4'>
-                            <button type="button" className="btn btn-warning mx-auto fs-4">Find Buses</button>
-                        </div>    
+                    <div className='col-md-5'></div>
+                    <div className='col-md-4'>
+                        
+                    <button type="submit" className="btn btn-warning mx-auto fs-4">Find Buses</button>
+                        
+                    </div>    
                 </div>
             </div>
 

@@ -1,7 +1,7 @@
 
-import React ,{useState,useEffect} from 'react';
+import React  from 'react';
 import { Route } from 'react-router-dom';
-import axios from "axios";
+//import axios from "axios";
 import Navbar from './component/user/Navbar';
 import './App.css';
 import Home from './component/user/pages/Home';
@@ -11,6 +11,8 @@ import UserLogin from './component/user/pages/UserLogin';
 import SingInForm from './component/user/SingInForm';
 import AddBus from './component/busManagement/AddBus';
 import SearchBus from './component/BookingManagement/SearchBus';
+import BusList from './component/BookingManagement/BusList';
+import GetyourSeat from './component/BookingManagement/GetyourSeat';
 
 function App() {
 
@@ -23,8 +25,11 @@ function App() {
           <Route exact path= '/contact' render={()=><AddBus/>}/>
           <Route exact path='/usersingin' render={()=> <SingInForm/>}/>
           <Route exact path='/userlogin' component={UserLogin}/>
+          <Route exact path='/services/:from/:to' component={BusList}/>
+          <Route exact path='/booking/:id' render={()=> <GetyourSeat/>}/>
       <Footer/>
       
+  
     </div>
     
   );
