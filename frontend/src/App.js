@@ -10,6 +10,7 @@ import Footer from './component/user/Footer';
 import UserLogin from './component/user/pages/UserLogin';
 import SingInForm from './component/user/SingInForm';
 import AddBus from './component/busManagement/AddBus';
+import ShowBusDetails from './component/busManagement/ShowBusDetails';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
           <Route exact path= '/contact' render={()=><AddBus/>}/>
           <Route exact path='/usersingin' render={()=> <SingInForm/>}/>
           <Route exact path='/userlogin' component={UserLogin}/>
+          <Route exact path='/show' component={ShowBusDetails}/>
       <Footer/>
     </div>
     

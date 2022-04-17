@@ -15,6 +15,18 @@ AddBus = (req,res) =>{
         res.send(500).send({status:"Error with update like!",error:err.message});
     })
 }
+
+    getData = async(req,res)=>{
+        busData.find(function(err,user){
+            if(err) return res.status(500).send("Error on the server");
+            if(!user){
+                return res.status(404).send("No user found");
+            }else{
+                res.send(user);
+            }
+        });
+    };
 module.exports ={
-    AddBus
+    AddBus,
+    getData
 }
