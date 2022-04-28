@@ -10,7 +10,12 @@ const admin = require('./routers/admin_router');
 const bus = require('./routers/busRouter/busRouter');
 
 const booking = require('./routers/booking_routers/booking_router');
+<<<<<<< HEAD
 const timetable = require('./routers/booking_routers/timeTable_router');
+=======
+const driver = require("./routers/Employeemagement_router/driver_router");
+const conductor = require("./routers/Employeemagement_router/conductor_router");
+>>>>>>> 6208b7ad098cc2455f2868a92a5db1ad487eebb9
 
 
 
@@ -35,8 +40,14 @@ app.use(cors());
 app.use('/api/admin',admin);
 app.use('/api/busManagement',bus);
 
+<<<<<<< HEAD
 app.use('/api/booking',booking);
 app.use('/api/timetable',timetable);
+=======
+app.use('/api/booking', booking);
+app.use('/api/driver', driver);
+app.use('/api/conductor', conductor);
+>>>>>>> 6208b7ad098cc2455f2868a92a5db1ad487eebb9
 
 //------------------------------------------------
 
