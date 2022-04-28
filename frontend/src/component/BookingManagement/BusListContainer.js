@@ -5,7 +5,7 @@ function BusListContainer(probes) {
   return (
     <div className='row border border-4 rounded m-2 details'>
             <div className='col-md-2 my-2'>
-            <img src={require('../../mainBackground.jpg').default} className='imgTag' alt='myName is'/>
+            {/* <img src={require('../../mainBackground.jpg').default} className='imgTag' alt='myName is'/> */}
             </div>
             <div className='col-md-3'>
                 <div className='row my-1'>

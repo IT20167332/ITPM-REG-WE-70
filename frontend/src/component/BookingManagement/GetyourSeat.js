@@ -9,7 +9,7 @@ function GetyourSeat() {
     const ids = "";
 
     useEffect(async() => {         
-        axios.get(`http://localhost:8989/api/timetable/get_select_time_by_id/625b977115c1794418eae371`)
+        axios.get(`http://localhost:8989/api/timetable/get_select_time_by_id/${id}`)
         .then(res => setbusData(res.data))
         .catch(error => console.log(error));
     },[loading]);
@@ -182,15 +182,19 @@ function GetyourSeat() {
 
         axios.put(`http://localhost:8989/api/timetable/set_array`,{id:id , arr:temparray})
         .then((res)=>{
-            
+            window.location.replace(`/services`);
         })
         .catch((err)=>{
             console.log(err)
+            window.location.replace(`/services`);
         })
+        
+        
     }
  
  
   return (
+      
   <>
       <div className='container border my-4'>
         <h1 className='my-2'>Get Your Seat</h1>
@@ -253,7 +257,7 @@ function GetyourSeat() {
                 </div>
               </div>
               <div className='col border bg-light border-dark'>
-                pasaj
+                
               </div>
             </div>
           <div className='col-md-2 ms-3  border border-dark bg-light'>
@@ -261,12 +265,13 @@ function GetyourSeat() {
                 <div className='col-md-6'>Seat No</div>
                 <div className='col-md-6'>Price</div>
             </div>
-            
+            <form onSubmit={onSubmit}>
             <div id='wrapper3'></div>
-            <div className='row my-3 ms-3 fs-5'>
-                <div className='col-md-2'></div>
-                <div className='col-md-6'><button type='submit' className='btn btn-warning'>Pay Now</button></div>
-            </div>
+                <div className='row my-3 ms-3 fs-5'>
+                    <div className='col-md-2'></div>
+                    <div className='col-md-6'><button type='submit' className='btn btn-warning'>Pay Now</button></div>
+                </div>
+            </form>
           </div>
       </div>
       
