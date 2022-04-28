@@ -1,0 +1,34 @@
+### ------conductor registration
+POST  http://localhost:8989/api/conductor/add_conductor HTTP/1.1
+content-type: application/json
+
+{
+ "conductorName": "mibfbfjjjbfke1",
+    "conductorNIC": "444bjjjfbfbdf44g444",
+    "conductorId":"bhdhrdh53ll41g234", 
+    "contactNumber":"0111113453544347111"
+  
+
+}
+
+### ------display conductor 
+GET   http://localhost:8989/api/conductor/get_conductor HTTP/1.1
+content-type: application/json
+
+### Update conductor
+Put  http://localhost:8989/api/conductor/update_conductor/625b219249fad367a1766cf5 HTTP/1.1
+content-type : application/json
+
+{
+ "conductorName": "mibfb",
+    "conductorNIC": "444bjjjf",
+    "conductorId":"bhdhrdh5", 
+    "contactNumber":"0111113"
+  
+
+}
+
+
+### ------delete conductor 
+DELETE    http://localhost:8989/api/conductor/delete_conductor/625b3421c824e08efde492d1 HTTP/1.1
+content-type: application/json
