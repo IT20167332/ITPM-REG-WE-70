@@ -10,12 +10,15 @@ function BusList() {
     
        const { from } = useParams();
        const { to } = useParams();
+
        const [buses, setbuses] = useState([])
+
+
 
        //console.log("from = "+from+" to : "+to)
        useEffect(() => {
               
-            axios.get(`http://localhost:8989/api/timetable/get_select_time_row/${from}/${to}`)
+            axios.get(`http://localhost:8989/api/timetable/get_select_time_row/${from}/${to}/`)
             .then(res => setbuses(res.data))
        }, [])
        console.log(buses)

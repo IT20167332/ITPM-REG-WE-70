@@ -14,7 +14,7 @@ function SearchBus() {
         e.preventDefault()
         
         if(checkValidate()){
-            window.location.replace(`/services/${fromInput}/${toInput}`);
+            window.location.replace(`/services/${fromInput}/${toInput}/${date}`);
         }
 
         
@@ -104,7 +104,7 @@ function SearchBus() {
                     <div className='col-md-4'>
                         <div class="mb-3">
                             <label for="exampleFormControlInput1" class="form-label fs-5"><strong>Journey Date</strong></label>
-                            <input type="date" class="form-control" id="dateOne" placeholder="Journey Date" onChange={(e)=>{setdate(e.target.value)}}/>
+                            <input type="date" className="form-control" id="dateOne" placeholder="Journey Date" onChange={(e)=>{setdate(e.target.value)}}/>
                         </div>
                     </div>
                 </div>

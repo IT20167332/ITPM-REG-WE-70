@@ -15,8 +15,7 @@ function GetyourSeat() {
     },[loading]);
     
     if(busData.length == 0){
-        console.log("its null")
-        
+        console.log("its null");
     }
 
     const { id } = useParams();
@@ -182,11 +181,12 @@ function GetyourSeat() {
 
         axios.put(`http://localhost:8989/api/timetable/set_array`,{id:id , arr:temparray})
         .then((res)=>{
+            console.log("onSubmitWork");
             window.location.replace(`/services`);
         })
         .catch((err)=>{
             console.log(err)
-            window.location.replace(`/services`);
+            //window.location.replace(`/services`);
         })
         
         
