@@ -16,6 +16,7 @@ import GetyourSeat from './component/BookingManagement/GetyourSeat';
 import Displaydriver from './component/EmployeeMagement/Displaydriver';
 import AddDriver from './component/EmployeeMagement/AddDriver';
 import AdminMenu from './component/AdminManagement/AdminMenu';
+import MyBooking from './component/BookingManagement/MyBooking';
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
           <Route exact path='/showdriver' component={Displaydriver} />
           <Route exact path='/adddriver' component={AddDriver} />
           <Route exact path='/adminPanel/:pname' render={()=> <AdminMenu/>}/>
+          <Route exact path='/myBooking' render={()=> <MyBooking/>}/>
           
       <Footer/>
       
