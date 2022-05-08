@@ -60,7 +60,7 @@ function UpdateDriver() {
   return (
     <div className="form-container">
           <form className="addbus-form" onSubmit={submitData}>
-              <h1>Edit Driver  </h1>
+              <h1>Edit Driver details</h1>
            
             <input 
                 onChange={(event)=>{setdriverName(event.target.value)}}

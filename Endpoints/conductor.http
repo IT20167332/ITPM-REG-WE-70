@@ -32,3 +32,8 @@ content-type : application/json
 ### ------delete conductor 
 DELETE    http://localhost:8989/api/conductor/delete_conductor/626d0c1c421dce2b2206d4d0 HTTP/1.1
 content-type: application/json
+
+
+### ------display conductor 
+GET   http://localhost:8989/api/conductor/get_one_conductor/6277cb7babb8da2cc45c16e8 HTTP/1.1
+content-type: application/json

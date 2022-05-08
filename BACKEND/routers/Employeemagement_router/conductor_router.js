@@ -7,5 +7,6 @@ router.post('/add_conductor', spc.conductorRegistration);
 router.get('/get_conductor', spc.conductorDisplay);
 router.put("/update_conductor/:id", spc.updateConductor);
 router.delete("/delete_conductor/:id", spc.deleteConductor);
+router.get('/get_one_conductor/:id', spc.conductorOneDisplay);
 
 module.exports = router;

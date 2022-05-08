@@ -39,7 +39,7 @@ function App() {
             <Route exact path='/addconductor' component={AddConductor} />
             <Route exact path='/showconductor' component={Displayconductor} />
             <Route exact path='/updatedriver/:id' component={UpdateDriver} />
-            <Route exact path='/updateconductor' component={UpdateConductor} />
+            <Route exact path='/updateconductor/:id' component={UpdateConductor} />
           <Route exact path= '/contact/:fomType' render={()=><AddBus/>}/>
           <Route exact path='/usersingin' render={()=> <SingInForm/>}/>
           <Route exact path='/userlogin' component={UserLogin}/>

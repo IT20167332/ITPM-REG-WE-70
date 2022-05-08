@@ -76,10 +76,22 @@ deleteConductor = async (req, res) => {
   });
 };
 
+conductorOneDisplay = async (req, res) => {
+  conductorData.findOne( function (err, user) {
+    if (err) return res.status(500).send("Error on the server.");
+    if (!user) {
+      return res.status(404).send("No user found.");
+    } else {
+      res.send(user);
+    }
+  });
+};
+
 module.exports = {
   conductorRegistration,
   conductorDisplay,
   updateConductor,
-  deleteConductor
+  deleteConductor,
+  conductorOneDisplay
 
 }
