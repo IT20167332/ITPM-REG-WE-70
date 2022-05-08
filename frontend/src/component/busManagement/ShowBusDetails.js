@@ -1,10 +1,11 @@
 import axios from 'axios';
 import React, { useEffect,useState } from 'react'
+import {Link} from 'react-router-dom'
 
 function ShowBusDetails() {
  const [getData, setgetData] = useState([])
 
-
+  //const fomType = 'update'
   useEffect(() => {
     axios.get("http://localhost:8989/api/busManagement/show_bus_details")
     .then((res)=>{
@@ -25,6 +26,7 @@ function ShowBusDetails() {
   return (
 
     <div>
+      <h2><center>All bus details</center></h2>
      <table class= "table">
         <thead>
           <tr>
@@ -46,9 +48,12 @@ function ShowBusDetails() {
               <td>{values.noOfSeats}</td>
               <td>{values.details}</td>
               <td>
-                <a className="btn btn-warning" href="#">
-                  <i className="fas fa-edit"></i>&nbsp;Edit
-                </a>
+                <Link to='contact/update'>
+                  <a className="btn btn-warning" href="#">
+                    <i className="fas fa-edit"></i>&nbsp;Edit
+                  </a>
+                </Link>
+                
                 &nbsp;
                 <a className="btn btn-danger" href="#">
                   <i className="far fa-trash"></i>&nbsp;Delete

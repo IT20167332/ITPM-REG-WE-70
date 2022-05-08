@@ -20,7 +20,7 @@ function App() {
       <Navbar/> 
           <Route exact path='/' component={Home}/> 
           
-          <Route exact path= '/contact' render={()=><AddBus/>}/>
+          <Route exact path= '/contact/:fomType' render={()=><AddBus/>}/>
           <Route exact path='/usersingin' render={()=> <SingInForm/>}/>
           <Route exact path='/userlogin' component={UserLogin}/>
           <Route exact path='/show' component={ShowBusDetails}/>

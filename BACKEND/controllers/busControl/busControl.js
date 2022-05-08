@@ -17,16 +17,32 @@ AddBus = (req,res) =>{
 }
 
     getData = async(req,res)=>{
-        busData.find(function(err,user){
-            if(err) return res.status(500).send("Error on the server");
-            if(!user){
-                return res.status(404).send("No user found");
-            }else{
-                res.send(user);
-            }
-        });
-    };
+        busData.find()
+        .then((busData)=>{
+            res.status(200).send(busData);
+        })
+        .catch((err)=>{
+            res.status(400).send(err);
+        })
+        
+    }
+
+    updateBus = async(req,res)=>{
+        let id= req.params.id;
+        let {getData}= req.body;
+        const updateDate = {
+            getData
+        }
+       busData.findByIdAndUpdate(id,getData)
+       .then(()=>{
+           res.status(200).send({status: "updated successfull"})
+       })
+       .catch((err)=>{
+        res.status(400).send(err);
+       })
+    }
 module.exports ={
     AddBus,
-    getData
+    getData,
+    updateBus
 }
