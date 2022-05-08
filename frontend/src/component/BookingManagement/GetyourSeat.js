@@ -13,7 +13,7 @@ function GetyourSeat() {
         .then(res => setbusData(res.data))
         .catch(error => console.log(error));
     },[loading]);
-    
+    console.log(busData);
     if(busData.length == 0){
         console.log("its null");
     }
@@ -177,9 +177,34 @@ function GetyourSeat() {
 
     }
 
-    function onSubmit(){
+    function onSubmit(e){
+        e.preventDefault();
         console.log("onSubmitWork");
         axios.put(`http://localhost:8989/api/timetable/set_array`,{id:id , arr:temparray})
+        .then((res)=>{
+            setBooking();
+        })
+        .catch((err)=>{
+            console.log(err)
+            window.location.replace(`/services`);
+        }) 
+    }
+
+    function setBooking(){
+        const busId = busData.BusId._id;
+        const SeatNo = temparray;
+        const travelDate = busData.fromTime;
+        const passengerId = "u0001";
+        const paymentValidity = false;
+        const route = busData._id;
+        const obj = {
+            busId,
+            SeatNo,
+            travelDate,
+            passengerId,
+            paymentValidity
+        }
+        axios.post(`http://localhost:8989/api/booking/add_booking`,obj)
         .then((res)=>{
             window.location.replace(`/usersingin/${total}`);
         })
@@ -187,8 +212,6 @@ function GetyourSeat() {
             console.log(err)
             window.location.replace(`/services`);
         })
-        
-        
     }
  
  
