@@ -30,5 +30,5 @@ content-type : application/json
 
 
 ### ------delete conductor 
-DELETE    http://localhost:8989/api/conductor/delete_conductor/626d12e9421dce2b2206d4df HTTP/1.1
+DELETE    http://localhost:8989/api/conductor/delete_conductor/626d0c1c421dce2b2206d4d0 HTTP/1.1
 content-type: application/json

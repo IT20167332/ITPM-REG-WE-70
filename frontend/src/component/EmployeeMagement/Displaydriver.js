@@ -24,12 +24,13 @@ function Displaydriver() {
   
   //const id = window.localStorage.getItem('ids')||'';
   
-  function Delete() {
-      const [getData, setgetData] = useState([])
+  function Delete(id) {
+      
+      
     axios
-      .delete(` http://localhost:8989/api/driver/delete_driver/626d0a1e421dce2b2206d4c0`)
+      .delete(` http://localhost:8989/api/driver/delete_driver/${id}`)
       .then((res) => {
-        alert("delete succesful");
+        alert("Driver record delete successfully!");
         //this.getPost();
       
       });
@@ -60,12 +61,14 @@ function Displaydriver() {
               <td>{values.driverId}</td>
               <td>{values.contactNumber}</td>
               <td>
+                <Link to={`/UpdateDriver/${values._id}`}>
                 <a className="btn btn-success px-3 btn-rounded waves-effect" href="#">
                   <i className="fas fa-edit"></i>&nbsp;Edit
                 </a>
                 &nbsp;
-                <a className="btn btn-danger" href="#"  onClick={Delete}>
-                  <i className="fas fa-trash-alt"></i>&nbsp;Delete
+                </Link>
+                <a className="btn btn-danger"  >
+                  <i className="fas fa-trash-alt" onClick={()=>{Delete(values._id)}}></i>&nbsp;Delete
                 </a>
               </td>
             </tr>
@@ -77,11 +80,6 @@ function Displaydriver() {
               <Link to='/adddriver'>
               <button type="button"class="btn btn-outline-warning btn-rounded waves-effect "><i class="far fa-user pr-2" aria-hidden="true"></i>Add Driver</button>
               </Link>
-      </div>
-      <div class="d-grid gap-2 d-md-block">
-
-        <button class="btn btn-primary bi-arrow-down-circle" type="button">Report</button>
-      
       </div>
     
     </div>

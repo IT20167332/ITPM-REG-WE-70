@@ -88,7 +88,7 @@ function UpdateConductor() {
 
             <div>
               <button class="btn btn-outline-warning btn-rounded waves-effect d-grid gap-2 col-6 mx-auto" type="submit">
-                    submit
+                    Save
                   </button>
     
              </div> 

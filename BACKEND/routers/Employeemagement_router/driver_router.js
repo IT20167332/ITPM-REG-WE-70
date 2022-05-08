@@ -7,5 +7,6 @@ router.post('/add_driver', spc.driverRegistration);
 router.get('/get_driver', spc.driverDisplay);
 router.put("/update_driver/:id", spc.updateDriver);
 router.delete("/delete_driver/:id", spc.deleteDriver);
+router.get('/get_one_driver/:id', spc.driverOneDisplay);
 
 module.exports = router;

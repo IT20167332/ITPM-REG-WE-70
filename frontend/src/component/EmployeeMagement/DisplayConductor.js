@@ -21,12 +21,12 @@ function Displayconductor() {
       console.log(values)
     })
   
- function Delete() {
+ function Delete(id) {
       
     axios
-      .delete(`  http://localhost:8989/api/conductor/delete_conductor/626d128a421dce2b2206d4d6`)
+      .delete(`  http://localhost:8989/api/conductor/delete_conductor/${id}`)
       .then((res) => {
-        alert("delete succesful");
+        alert("Conductor record delete successfully!");
         //this.getPost();
       
       });
@@ -56,12 +56,14 @@ function Displayconductor() {
               <td>{values.conductorId}</td>
               <td>{values.contactNumber}</td>
               <td>
+                <Link to='/UpdateConductor'>
                 <a className="btn btn-success px-3 btn-rounded waves-effect" href="#">
                   <i className="fas fa-edit"></i>&nbsp;Edit
                 </a>
                 &nbsp;
-                <a className="btn btn-danger" href="#"onClick={Delete}>
-                  <i className="fas fa-trash-alt"></i>&nbsp;Delete
+                </Link>
+                <a className="btn btn-danger">
+                  <i className="fas fa-trash-alt" onClick={()=>{Delete(values._id)}}></i>&nbsp;Delete
                 </a>
               </td>
             </tr>

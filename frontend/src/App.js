@@ -38,7 +38,7 @@ function App() {
             <Route exact path='/adddriver' component={AddDriver} />
             <Route exact path='/addconductor' component={AddConductor} />
             <Route exact path='/showconductor' component={Displayconductor} />
-            <Route exact path='/updatedriver' component={UpdateDriver} />
+            <Route exact path='/updatedriver/:id' component={UpdateDriver} />
             <Route exact path='/updateconductor' component={UpdateConductor} />
           <Route exact path= '/contact/:fomType' render={()=><AddBus/>}/>
           <Route exact path='/usersingin' render={()=> <SingInForm/>}/>
@@ -49,8 +49,6 @@ function App() {
           <Route exact path='/services/:from/:to/:date' component={BusList}/>
           <Route exact path='/booking/:id' render={()=> <GetyourSeat/>}/>
           <Route exact path='/userlogin' component={UserLogin} />
-          <Route exact path='/showdriver' component={Displaydriver} />
-          <Route exact path='/adddriver' component={AddDriver} />
           <Route path='/adminPanel' render={()=> <AdminMenu/>}/>
           
       <Footer/>
