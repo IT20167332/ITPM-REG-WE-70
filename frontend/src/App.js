@@ -21,6 +21,7 @@ import Displayconductor from './component/EmployeeMagement/DisplayConductor';
 import UpdateDriver from './component/EmployeeMagement/UpdateDriver';
 import UpdateConductor from './component/EmployeeMagement/UpdateConductor';
 import AdminMenu from './component/AdminManagement/AdminMenu';
+import MyBooking from './component/BookingManagement/MyBooking';
 
 function App() {
 
@@ -51,6 +52,8 @@ function App() {
           <Route exact path='/userlogin' component={UserLogin} />
           <Route exact path='/showdriver' component={Displaydriver} />
           <Route exact path='/adddriver' component={AddDriver} />
+          <Route exact path='/adminPanel/:pname' render={()=> <AdminMenu/>}/>
+          <Route exact path='/myBooking' render={()=> <MyBooking/>}/>
           <Route path='/adminPanel' render={()=> <AdminMenu/>}/>
           
       <Footer/>

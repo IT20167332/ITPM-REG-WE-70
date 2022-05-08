@@ -7,8 +7,7 @@ const bookingSchema = new mongoose.Schema({
         required:[true,"name is requird!"]
     },
     SeatNo:{
-        type:Number,
-        required:[true,"seat No requird!"]
+        type:[Number]
     },
     bookingDate:{
         type:Date,
@@ -23,6 +22,9 @@ const bookingSchema = new mongoose.Schema({
     },
     paymentValidity:{
         type:Boolean
+    },
+    timeTable:{
+        type: mongoose.Schema.Types.ObjectId, ref: "timeTs"
     }
       
 });
