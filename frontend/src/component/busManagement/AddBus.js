@@ -1,8 +1,14 @@
 import axios from 'axios';
 import React, { useState } from 'react'
+import { useParams } from 'react-router-dom'
 import "./AddBus.css";
 
 function AddBus() {
+
+    
+
+    const { fomType } = useParams();
+    console.log("formtype is = "+fomType);
     const[values, setValues]= useState({
         regNo:"",
         busRoute:"",
@@ -28,27 +34,44 @@ function AddBus() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if(values.regNo && values.busRoute && values.noOfSeats && values.details){
-            setValid(true);
-        }
-        setSubmitted(true);
-
-        submitData(event);
+        
+            if(values.regNo && values.busRoute && values.noOfSeats && values.details){
+                setValid(true);
+            }
+            setSubmitted(true);
+    
+            submitData(event);
+        
+ 
     }
 
     const submitData = (event) => {
         event.preventDefault();
-        axios.post("http://localhost:8989/api/busManagement/add_bus",values)
-        .then((res)=>{
-            console.log(res);
-        })
-        .catch((err)=>{
-            console.log(err);
-        })
+        if(fomType === 'add'){
+            axios.post("http://localhost:8989/api/busManagement/add_bus",values)
+            .then((res)=>{
+                console.log(res);
+            })
+            .catch((err)=>{
+                console.log(err);
+            })
+        }else if(fomType === 'update'){
+            axios.put("",values)
+        }
+
+        
+        
 
     }
   return (
     <div className="form-container">
+        {
+            fomType === 'add'?
+                <h2>Insert a bus here</h2>
+            :
+            <h2>update bus details here</h2>
+            
+        }
         <form className="addbus-form" onSubmit={handleSubmit}>
             {submitted && valid ?<div className="success-message">Success! Thank you for submitting</div>:null}
             <input 
@@ -80,9 +103,18 @@ function AddBus() {
                 name="AdditionalDetails" />
                 {submitted && !values.details ?<span>please enter the bus details</span>:null}
 
-            <button class="form-field" type="submit">
-            submit
-            </button>
+            
+            {
+                fomType === 'add'?
+                <button class="form-field" type="submit">
+                submit
+                </button>
+                :
+                <button class="form-field" type="submit">
+                update
+                </button>
+
+            }
         </form>
     </div>
   )

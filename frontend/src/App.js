@@ -10,6 +10,7 @@ import Footer from './component/user/Footer';
 import UserLogin from './component/user/pages/UserLogin';
 import SingInForm from './component/user/SingInForm';
 import AddBus from './component/busManagement/AddBus';
+import ShowBusDetails from './component/busManagement/ShowBusDetails';
 import SearchBus from './component/BookingManagement/SearchBus';
 import BusList from './component/BookingManagement/BusList';
 import GetyourSeat from './component/BookingManagement/GetyourSeat';
@@ -26,6 +27,10 @@ function App() {
           <Route exact path='/' component={Home}/> 
           <Route exact path='/services' component={SearchBus}/>
           
+          <Route exact path= '/contact/:fomType' render={()=><AddBus/>}/>
+          <Route exact path='/usersingin' render={()=> <SingInForm/>}/>
+          <Route exact path='/userlogin' component={UserLogin}/>
+          <Route exact path='/show' component={ShowBusDetails}/>
           <Route exact path='/usersingin/:payment' render={()=> <SingInForm/>}/>
           <Route exact path='/userlogin' component={UserLogin}/>
           <Route exact path='/services/:from/:to/:date' component={BusList}/>
@@ -33,7 +38,7 @@ function App() {
           <Route exact path='/userlogin' component={UserLogin} />
           <Route exact path='/showdriver' component={Displaydriver} />
           <Route exact path='/adddriver' component={AddDriver} />
-          <Route exact path='/adminPanel/:pname' render={()=> <AdminMenu/>}/>
+          <Route path='/adminPanel' render={()=> <AdminMenu/>}/>
           
       <Footer/>
       

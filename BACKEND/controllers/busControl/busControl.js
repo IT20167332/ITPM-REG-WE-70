@@ -15,6 +15,34 @@ AddBus = (req,res) =>{
         res.send(500).send({status:"Error with update like!",error:err.message});
     })
 }
+
+    getData = async(req,res)=>{
+        busData.find()
+        .then((busData)=>{
+            res.status(200).send(busData);
+        })
+        .catch((err)=>{
+            res.status(400).send(err);
+        })
+        
+    }
+
+    updateBus = async(req,res)=>{
+        let id= req.params.id;
+        let {getData}= req.body;
+        const updateDate = {
+            getData
+        }
+       busData.findByIdAndUpdate(id,getData)
+       .then(()=>{
+           res.status(200).send({status: "updated successfull"})
+       })
+       .catch((err)=>{
+        res.status(400).send(err);
+       })
+    }
 module.exports ={
-    AddBus
+    AddBus,
+    getData,
+    updateBus
 }
