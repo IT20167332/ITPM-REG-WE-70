@@ -17,6 +17,19 @@ addNewBooking = (req,res) =>{
     //add new file
 }
 
+deleteBooking = async(req,res) =>{
+    var id = req.body.id;
+
+    bookingData.deleteOne({_id:id})
+    .then((data)=>{
+        res.status(200).send(data);
+    })
+    .catch((error)=>{
+        res.status(400).send(error);
+    });
+}
+
 module.exports = {
-    addNewBooking
+    addNewBooking,
+    deleteBooking
 }
