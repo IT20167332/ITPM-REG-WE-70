@@ -27,6 +27,18 @@ AddBus = (req,res) =>{
         
     }
 
+    getDataById = async(req,res)=>{
+        let id = req.params.id;
+        busData.find({_id:id})
+        .then((busData)=>{
+            res.status(200).send(busData);
+        })
+        .catch((err)=>{
+            res.status(400).send(err);
+        })
+        
+    }
+
     updateBus = async(req,res)=>{
         let id= req.params.id;
         let {getData}= req.body;
@@ -40,9 +52,24 @@ AddBus = (req,res) =>{
        .catch((err)=>{
         res.status(400).send(err);
        })
+
+    }
+
+    deleteBus = async(req,res)=>{
+        var id = req.params.id;
+
+        busData.deleteOne({_id:id})
+        .then((data)=>{
+            res.status(200).send(data);
+        })
+        .catch((error)=>{
+            res.status(400).send(error);
+        });
     }
 module.exports ={
     AddBus,
     getData,
-    updateBus
+    updateBus,
+    getDataById,
+    deleteBus
 }
