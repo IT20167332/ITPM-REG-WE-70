@@ -123,7 +123,7 @@ function Navbar(props) {
                             </li>
                         :
                             <li>
-                                <Link to='/adminPanel' className='nav-links' onClick={closeMobileMenu}>
+                                <Link to='/adminPanel/home' className='nav-links' onClick={closeMobileMenu}>
                                     AdminPanel
                                 </Link>
                             </li>

@@ -91,12 +91,12 @@ function GetyourSeat() {
  const toDate2 = new Date(toDate);
  const Tdate = `${toDate2.getDate()}/${toDate2.getMonth()+1}/${toDate2.getFullYear()}`
  //console.log(Ttime + " : "+Tdate) 
- 
+ var total = 0;
  
 
     function calTotal(){
         let content = ``
-        let total = temparray.length * 150
+        total = temparray.length * 150
         for(let i=0; i < temparray.length; i++){
             content += `<div class='row my-3 ms-3 fs-5'>
             <div class='col-md-6'>${temparray[i]}</div>
@@ -178,15 +178,14 @@ function GetyourSeat() {
     }
 
     function onSubmit(){
-
+        console.log("onSubmitWork");
         axios.put(`http://localhost:8989/api/timetable/set_array`,{id:id , arr:temparray})
         .then((res)=>{
-            console.log("onSubmitWork");
-            window.location.replace(`/services`);
+            window.location.replace(`/usersingin/${total}`);
         })
         .catch((err)=>{
             console.log(err)
-            //window.location.replace(`/services`);
+            window.location.replace(`/services`);
         })
         
         

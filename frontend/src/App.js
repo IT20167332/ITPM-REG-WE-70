@@ -15,6 +15,7 @@ import BusList from './component/BookingManagement/BusList';
 import GetyourSeat from './component/BookingManagement/GetyourSeat';
 import Displaydriver from './component/EmployeeMagement/Displaydriver';
 import AddDriver from './component/EmployeeMagement/AddDriver';
+import AdminMenu from './component/AdminManagement/AdminMenu';
 
 function App() {
 
@@ -24,15 +25,16 @@ function App() {
       <Navbar/> 
           <Route exact path='/' component={Home}/> 
           <Route exact path='/services' component={SearchBus}/>
-          <Route exact path= '/contact' render={()=><AddBus/>}/>
-          <Route exact path='/usersingin' render={()=> <SingInForm/>}/>
+          
+          <Route exact path='/usersingin/:payment' render={()=> <SingInForm/>}/>
           <Route exact path='/userlogin' component={UserLogin}/>
           <Route exact path='/services/:from/:to/:date' component={BusList}/>
           <Route exact path='/booking/:id' render={()=> <GetyourSeat/>}/>
-      <Route exact path='/userlogin' component={UserLogin} />
-      <Route exact path='/showdriver' component={Displaydriver} />
-      <Route exact path='/adddriver' component={AddDriver} />
-    
+          <Route exact path='/userlogin' component={UserLogin} />
+          <Route exact path='/showdriver' component={Displaydriver} />
+          <Route exact path='/adddriver' component={AddDriver} />
+          <Route exact path='/adminPanel/:pname' render={()=> <AdminMenu/>}/>
+          
       <Footer/>
       
   

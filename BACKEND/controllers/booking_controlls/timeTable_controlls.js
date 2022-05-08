@@ -75,6 +75,7 @@ updateSeatArray = async(req,res)=>{
     })
 }
 
+
 module.exports = {
     addNewTimeRow,
     getAllTimeRow,
