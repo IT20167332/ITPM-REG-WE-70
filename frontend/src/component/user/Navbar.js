@@ -6,6 +6,8 @@ import { ProfileDropdown } from './ProfileDropdown';
 
 
 function Navbar(props) {
+    //A , P , 
+    const userType = 'B';
     const [click,setClick] = useState(false);
     const handleClick = () => setClick(!click);
     const [button,setButton] = useState(false);
@@ -19,7 +21,7 @@ function Navbar(props) {
         
     }
 
-    console.log(props)
+    //console.log(props)
 
     function getCookie(cname) {
         let name = cname + "=";
@@ -103,7 +105,7 @@ function Navbar(props) {
                         </li>
                         
                         <li>
-                            <Link to='/drawing' className='nav-links' onClick={closeMobileMenu}>
+                            <Link to='/services' className='nav-links' onClick={closeMobileMenu}>
                                 Services
                             </Link>
                         </li>
@@ -112,12 +114,20 @@ function Navbar(props) {
                                 About
                             </Link>
                         </li>
-                        <li>
-                            <Link to='/contact/add' className='nav-links' onClick={closeMobileMenu}>
-                                contact
-                            </Link>
-                        </li>
-                        
+                        {
+                            userType==='A'?
+                            <li>
+                                <Link to='/contact' className='nav-links' onClick={closeMobileMenu}>
+                                    contact
+                                </Link>
+                            </li>
+                        :
+                            <li>
+                                <Link to='/adminPanel/home/non' className='nav-links' onClick={closeMobileMenu}>
+                                    AdminPanel
+                                </Link>
+                            </li>
+                        }
                         <li>
                             <Link to='/userlogin' className='nav-links-mobile' onClick={closeMobileMenu}>
                                 Sign Up
