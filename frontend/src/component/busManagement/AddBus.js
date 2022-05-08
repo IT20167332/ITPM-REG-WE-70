@@ -1,13 +1,26 @@
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import "./AddBus.css";
 
 function AddBus() {
+    const { fomType } = useParams();
+    const [getData, setgetData] = useState([])
+    const id = '484';
+    //const fomType = 'update'
+    useEffect(() => {
+      axios.get(`http://localhost:8989/api/busManagement/show_bus_by_id/${id}`)
+      .then((res)=>{
+        setgetData(res.data)
+      })
+      .catch((err)=>{
+        console.log(err)
+      })
+  
+      
+    }, [])
 
     
-
-    const { fomType } = useParams();
     console.log("formtype is = "+fomType);
     const[values, setValues]= useState({
         regNo:"",
@@ -57,6 +70,12 @@ function AddBus() {
             })
         }else if(fomType === 'update'){
             axios.put("",values)
+            .then((res)=>{
+                console.log(res);
+            })
+            .catch((err)=>{
+                console.log(err);
+            })
         }
 
         

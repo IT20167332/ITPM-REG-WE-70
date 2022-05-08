@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useEffect,useState } from 'react'
 import {Link} from 'react-router-dom'
+//import { deleteBus } from '../../../../BACKEND/controllers/busControl/busControl';
+import './ShowBusDetails.css'
 
 function ShowBusDetails() {
  const [getData, setgetData] = useState([])
@@ -22,12 +24,16 @@ function ShowBusDetails() {
       console.log(values.regNo)
     })
 
+    function deleteBus(id){
+      axios.delete(`http://localhost:8989/api/busManagement/delete_bus/${id}`)
+    }
+
 
   return (
 
     <div>
       <h2><center>All bus details</center></h2>
-     <table class= "table">
+     <table class= "table colort">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -48,15 +54,15 @@ function ShowBusDetails() {
               <td>{values.noOfSeats}</td>
               <td>{values.details}</td>
               <td>
-                <Link to='contact/update'>
+                <Link to='addbus/update'>
                   <a className="btn btn-warning" href="#">
                     <i className="fas fa-edit"></i>&nbsp;Edit
                   </a>
                 </Link>
                 
                 &nbsp;
-                <a className="btn btn-danger" href="#">
-                  <i className="far fa-trash"></i>&nbsp;Delete
+                <a className="btn btn-danger">
+                  <i className="far fa-trash" onClick={deleteBus(values._id)}></i>&nbsp;Delete
                 </a>
               </td>
             </tr>
