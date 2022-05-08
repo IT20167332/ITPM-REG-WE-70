@@ -51,7 +51,7 @@ function AddDriver() {
     <div className="form-container">
           <form className="addbus-form" onSubmit={handleSubmit}>
               <h1>Driver Registration Form</h1>
-            {submitted && valid ?<div className="success-message">Driver Add Successfully</div>:null}
+            {submitted && valid ?<div className="alert alert-success ">Driver Add Successfully! <i class="fa fa-check"></i></div>:null}
             <input 
                 onChange={handleRegNoInputChange}
                 value={values.driverName}
@@ -59,15 +59,15 @@ function AddDriver() {
                 minlength="3"
                 placeholder="Driver Name"
                 name="DriverName" />
-            {submitted && !values.driverName ? <span>please enter a Driver Name</span>:null}
+            {submitted && !values.driverName ? <span> <i class="fa fa-times-circle"></i>please enter a Driver Name</span>:null}
             <input
                 onChange={handleBusRouteInputChange} 
                 value={values.driverNIC}
                 className="form-field"
-                placeholder="Driver NIC"
+                placeholder="NIC"
                 maxlength="12"
                 name="DriverNIC" />
-            {submitted && !values.driverNIC ? <span>please enter a Driver NIC</span>:null}
+            {submitted && !values.driverNIC ? <span> <i class="fa fa-times-circle"></i>please enter a Driver NIC</span>:null}
             <input 
                 onChange={handleNoOfSeatsInputChange}
                 value={values.driverId}
@@ -76,19 +76,24 @@ function AddDriver() {
                 minlength="4"
                 maxlength="8"
                 name="DriverID" />
-                {submitted && !values.driverId ?<span>please enter a Driver ID</span>:null}
+                {submitted && !values.driverId ?<span> <i class="fa fa-times-circle"></i>please enter a Driver ID</span>:null}
             <input 
                 onChange={handleAdditionalDetailsInputChange}
                 value={values.contactNumber}
                 className="form-field"
                 placeholder="Contact Number"
-                maxlength="12"
+                maxlength="10"
                 name="Contact Number" />
-                {submitted && !values.contactNumber ?<span>please enter the Contact Number</span>:null}
+                {submitted && !values.contactNumber ?<span> <i class="fa fa-times-circle"></i>please enter the Contact Number</span>:null}
 
-            <button class="form-field" type="submit">
-            submit
-            </button>
+            <div>
+              <button class="btn btn-outline-warning btn-rounded waves-effect d-grid gap-2 col-6 mx-auto" type="submit">
+                    submit
+                  </button>
+    
+            </div> 
+              
+              
         </form>
     </div>
   )
